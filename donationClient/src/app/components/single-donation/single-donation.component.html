@@ -1,0 +1,37 @@
+<br>
+<h2>Enter the Donation ID</h2>
+<div class="dono">
+  <input type="number" (keyup)="onIdKeyUp($event)">
+  <button (click)="viewDonation()">Get Donation</button>
+  <br>
+  
+</div>
+    <div *ngIf="found; else elseTemplate">
+        <table class="table table-striped">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Address</th>
+                <th>Amount</th>
+                <th>Date of Donation</th>
+              </thead>
+            <tbody>
+              <tr>
+                <td>{{donations.id}}</td>
+                <td>{{donations.name}}</td>
+                <td>{{donations.number}}</td>
+                <td>{{donations.address}}</td>
+                <td>{{donations.amount | currency:'USD'}}</td>
+                <td>{{donations.dod | date: "yyyy.MM.dd"}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="notfound">
+      <ng-template #elseTemplate>
+        <p>Donation not found</p>
+        </ng-template>
+
+    </div>
+

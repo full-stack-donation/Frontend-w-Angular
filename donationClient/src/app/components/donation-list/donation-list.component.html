@@ -1,0 +1,32 @@
+<br>
+<h3>HH Trust</h3>
+<br>
+<h2>Donation List</h2>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Address</th>
+      <th>Amount</th>
+      <th>Date of Donation</th>
+      <th>Operations</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let donation of donations">
+        <td>{{donation.id}}</td>
+        <td>{{donation.name}}</td>
+        <td>{{donation.number}}</td>
+        <td>{{donation.address}}</td>
+        <td>{{donation.amount}}</td>
+        <td>{{donation.dod | date: "yyyy.MM.dd"}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteDonation(donation)">Delete</button>&nbsp; &nbsp;
+          <button class="btn btn-primary" (click)="updateDonation(donation)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <td><button class="btn btn-primary" (click)="createDonation()">New Donation</button></td>
+</div>

@@ -1,0 +1,55 @@
+<br>
+<div class="Welcome">
+  <h1>Welcome to HH Trust</h1>
+</div>
+<br>
+<h3>Please Enter Donation Details</h3>
+<div class="container">
+    <form (ngSubmit)="form.valid && processForm()" name="form" [formGroup]="form" >
+        <input type="hidden" name="id" class="form-control" [(ngModel)]="donation.id" [ngModelOptions]="{standalone:true}">
+
+      <div class="form_group">
+        <label for="name">Donation Name</label>
+        <input type="text" class="form-control" [(ngModel)]="donation.name" formControlName="name" [ngClass]="{'is-invalid': 
+        form.get('name').touched && form.get('name').invalid}">
+        <div class="invalid-feedback">
+          <div>Name is required</div>
+        </div>
+      </div>
+
+      <div class="form_group">
+        <label for="name">Donation number</label>
+        <input type="number" class="form-control" [(ngModel)]="donation.number" formControlName="numb" [ngClass]="{'is-invalid': 
+        form.get('numb').touched && form.get('numb').invalid}">
+        <div class="invalid-feedback">
+            <div>Number is required</div>
+            <div>Number must be of length 10</div>
+          </div>
+      </div>
+
+      <div class="form_group">
+        <label for="name">Donation address</label>
+        <input type="text" class="form-control" [(ngModel)]="donation.address" formControlName="address" [ngClass]="{'is-invalid': 
+        form.get('address').touched && form.get('address').invalid}">
+        <div class="invalid-feedback">
+            <div>Address is required</div>
+          </div>
+      </div>
+
+      <div class="form_group">
+        <label for="name">Donation amount</label>
+        <input type="number" class="form-control" [(ngModel)]="donation.amount" formControlName="amount" [ngClass]="{'is-invalid': 
+        form.get('amount').touched && form.get('amount').invalid}">
+        <div class="invalid-feedback">
+            <div>Amount is required</div>
+          </div>
+      </div>
+
+      <div class="form_group">
+        <input type="hidden" name="dod" class="form-control" [(ngModel)]="donation.dod" [ngModelOptions]="{standalone:true}">
+      </div>
+
+      <br>
+      <input type="submit" value="Add Donation" class="btn btn-success">
+    </form>
+  </div>

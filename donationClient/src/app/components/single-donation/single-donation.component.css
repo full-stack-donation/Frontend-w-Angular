@@ -1,0 +1,14 @@
+.dono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    text-align: center;
+    color: red;
+}
+
+h2 {
+    text-align: center;
+}
